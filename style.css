@@ -651,39 +651,41 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-#lyrics{
-    position:fixed;
-    top:50%;
-    transform:translateY(-50%);
+#lyrics {
+    position: fixed;
+    top: 50%;
+    left: 50%; /* Membuat titik awal kotak berada di tengah horizontal */
+    transform: translate(-50%, -50%); /* Geser pas ke tengah-tengah layar (X dan Y) */
 
-    color:white;
+    color: white;
+    text-align: center; /* Membuat semua teks lirik otomatis rata tengah */
 
-    font-family:'Cormorant Garamond', serif;
-    font-size:20px;
-    font-weight:500;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
 
-    letter-spacing:1px;
-    line-height:1.5;
+    letter-spacing: 1px;
+    line-height: 1.5;
 
-    opacity:0;
+    opacity: 0;
 
-    transition:opacity 1.2s ease;
+    transition: opacity 1.2s ease;
 
-    text-shadow:0 0 20px rgba(255,255,255,0.25);
+    text-shadow: 0 0 20px rgba(255,255,255,0.25);
 
-    z-index:99999;
+    z-index: 99999;
 
-    max-width:420px;
+    width: 100%;       /* Memastikan area lirik bisa fleksibel */
+    max-width: 420px;  /* Batas maksimal lebar teks biar tetap estetik */
 }
 
-.left{
-    left:5%;
-    text-align:left;
+/* Kosongkan isinya agar tidak menabrak aturan posisi tengah di atas */
+.left {
+    /* Sengaja dikosongkan */
 }
 
-.right{
-    right:5%;
-    text-align:right;
+.right {
+    /* Sengaja dikosongkan */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
