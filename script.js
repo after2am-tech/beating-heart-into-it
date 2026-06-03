@@ -1,4 +1,3 @@
-// 1. Ambil semua elemen yang dibutuhkan
 const musik = document.getElementById('song');
 const lyricElement = document.getElementById("lyrics") || document.body; // Biar aman kalau id lyrics tidak ketemu
 
@@ -16,21 +15,18 @@ const lyrics = [
 
 let current = -1;
 
-// 3. Pemicu Klik Utama (Biar jalan di HP / Browser Online)
 document.addEventListener('click', () => {
     musik.play().then(() => {
         console.log("Musik berhasil diputar!");
-        current = -1; // Reset ulang index lirik pas diklik
+        current = -1; 
     }).catch(error => {
         console.log("Autoplay diblokir browser:", error);
     });
 }, { once: true });
 
-// 4. Logika Menampilkan Lirik Berdasarkan Waktu Musik
 musik.addEventListener("timeupdate", () => {
   const time = musik.currentTime;
 
-  // Reset indeks ketika lagu kembali ke awal/looping
   if (time < 0.2) {
     current = -1;
   }
@@ -40,15 +36,13 @@ musik.addEventListener("timeupdate", () => {
       if (current !== index) {
         current = index;
 
-        // Tampilkan teks lirik
         lyricElement.innerHTML = line.text;
         lyricElement.className = "";
         lyricElement.classList.add(line.side);
         lyricElement.style.opacity = "1";
 
-        // Efek menghilang (Fade Out) sebelum ganti lirik berikutnya
         setTimeout(() => {
-          // Pastikan lirik tidak mendadak hilang kalau user sedang di lirik yang sama
+          
           if (current === index) {
             lyricElement.style.opacity = "0";
           }

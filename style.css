@@ -654,8 +654,8 @@ body {
 #lyrics {
     position: fixed;
     top: 50%;
-    left: 50%; /* Membuat titik awal kotak berada di tengah horizontal */
-    transform: translate(-50%, -50%); /* Geser pas ke tengah-tengah layar (X dan Y) */
+    left: 50%; 
+    transform: translate(-50%, -50%); 
 
     color: white;
     text-align: center; /* Membuat semua teks lirik otomatis rata tengah */
@@ -675,17 +675,16 @@ body {
 
     z-index: 99999;
 
-    width: 100%;       /* Memastikan area lirik bisa fleksibel */
-    max-width: 420px;  /* Batas maksimal lebar teks biar tetap estetik */
+    width: 100%;       
+    max-width: 420px;  
 }
 
-/* Kosongkan isinya agar tidak menabrak aturan posisi tengah di atas */
 .left {
-    /* Sengaja dikosongkan */
+    
 }
 
 .right {
-    /* Sengaja dikosongkan */
+    
 }
 
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
